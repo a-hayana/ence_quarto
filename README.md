@@ -12,11 +12,11 @@ Material do minicurso apresentado por Ariane Hayana na VI Semana de Iniciação 
 
 #### Códigos
 
-- Exemplo inicial: 
+- Exemplo inicial: https://github.com/a-hayana/ence_quarto/blob/master/exemplo_inicial/meu_primeiro_doc.qmd
 
-- Exemplo de Relatório em html: 
+- Exemplo de Relatório em html: https://github.com/a-hayana/ence_quarto/blob/master/relatorio_html/relatorio.qmd
 
-- Exemplo de Relatório em pdf: 
+- Exemplo de Relatório em pdf: https://github.com/a-hayana/ence_quarto/blob/master/relatorio_pdf/meu_doc_pdf.qmd
 
 <br>
 
