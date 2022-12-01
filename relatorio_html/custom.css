@@ -1,0 +1,17 @@
+/* Customização */
+
+/* Customização do banner no topo da página */
+#title-block-header.quarto-title-block.default .quarto-title .title {
+    text-shadow: 4px 2px 6px #5e5d5d75;
+}
+
+/* Mudando a cor do fundo no subtítulo */
+p.subtitle {
+    background-color: #5e92c32e;
+}
+
+/* Justificar parágrafos */
+p
+{
+text-align: justify;
+}

@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.207">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ariane Hayana">
+<meta name="dcterms.date" content="2022-01-12">
+
+<title>Meu relatório em Quarto</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="relatorio_files/libs/clipboard/clipboard.min.js"></script>
+<script src="relatorio_files/libs/quarto-html/quarto.js"></script>
+<script src="relatorio_files/libs/quarto-html/popper.min.js"></script>
+<script src="relatorio_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="relatorio_files/libs/quarto-html/anchor.min.js"></script>
+<link href="relatorio_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="relatorio_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="relatorio_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="relatorio_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="relatorio_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="relatorio_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="relatorio_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+
+<script src="relatorio_files/libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="relatorio_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="relatorio_files/libs/datatables-binding-0.23/datatables.js"></script>
+<script src="relatorio_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="relatorio_files/libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="relatorio_files/libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="relatorio_files/libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="relatorio_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="relatorio_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="relatorio_files/libs/d3-3.5.5/d3.v3.min.js"></script>
+<link href="relatorio_files/libs/pairsD3-0.1.1/style.css" rel="stylesheet">
+<script src="relatorio_files/libs/pairsD3-binding-0.1.3/pairsD3.js"></script>
+<script src="relatorio_files/libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="relatorio_files/libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="relatorio_files/libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="relatorio_files/libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+
+
+<link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#conjunto-de-dados-iris" id="toc-conjunto-de-dados-iris" class="nav-link active" data-scroll-target="#conjunto-de-dados-iris">Conjunto de dados: Iris</a>
+  <ul class="collapse">
+  <li><a href="#inserindo-código-do-r-em-linha-de-texto" id="toc-inserindo-código-do-r-em-linha-de-texto" class="nav-link" data-scroll-target="#inserindo-código-do-r-em-linha-de-texto">Inserindo código do R em linha de texto</a></li>
+  <li><a href="#visualizações" id="toc-visualizações" class="nav-link" data-scroll-target="#visualizações">Visualizações</a></li>
+  <li><a href="#tabela-descritiva-com-pacote-summarytools" id="toc-tabela-descritiva-com-pacote-summarytools" class="nav-link" data-scroll-target="#tabela-descritiva-com-pacote-summarytools">Tabela descritiva com pacote <code>summarytools</code></a></li>
+  <li><a href="#vídeos-no-relatório-quarto" id="toc-vídeos-no-relatório-quarto" class="nav-link" data-scroll-target="#vídeos-no-relatório-quarto">Vídeos no relatório Quarto</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Meu relatório em Quarto</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar o código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Esconder o código</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">Ver o código fonte</a></li></ul></div></div>
+<p class="subtitle lead"><strong>Minicurso - Primeiros passos com Quarto</strong></p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ariane Hayana </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Data de Publicação</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">01/12/2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="cell-output-display">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHIAAABwCAYAAADCFSR2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAADg2SURBVHhe7X0HXNXV+/+bvacs2YqCuPdCXDhxlHtV5rZMc1RqpWnlSM1ypalZfm06c6G4F+7NEEVQUBDZe8P9Pc/53KsXuOAFEfP/+r/ryv3Me855znnWec5zNGQE/D+AlIw8mBvr0DcN6YQaSM8qgImhtvzozcYbR8jMnALEJGQh8GEGbt5PxrWwFARFpiPqUSrG9nPDL5+0lN9ZPmauv4Uf/g6Fq7M5GroYo0VdCzSrY44GrqZwsDKAgZ6W/M43A28UIdf+G47Zm4OQlZkP6GjD3kIHzYgA3g0tkZSWh2U77iN+Zx9YmenJn1CN9Kx8WA06iPG9nOBkY4AzQam4EZaI2GR6b34RjEy08MWo+pg73F3+xBsAJuSbgoELLskaT/CXhUenyvILCuVnn8O0/z7ZJxtuyY/KxsKtwTKdXrvlR8+Rm18gC3ucKms95Zis++wA+dk3A5pyer4RiE3JRiNXE9S2N4W2libyCooQ9jgdt+6niOtzR9TF2r0RKKDzZYHqjO933sfs4R7i+HxwAsJjMlBQWARdbS3UcTBF09omSEjNFdffFLxRhIxLyoG9lZH4PvSbK3AecRBNJh2Dz+yz4ty0t+sQcWVYfyBcHKvClkMPkJZdgNlD6yI5PQ8dZ55BU3qHw7ADmL4hWNxjZ2mIxLQc8f1NwWsl5OXQJHT+5AKCHqbKz5SP+ORs1KxhKL5fDHmK9Mwc6GkXISk1G+v3hcNQXxuT+7li3m+h4h5VmLMlBON7u8DYQAdf/hoMTVkhtDULkZqRg+thSeIeO/qNxDT1RmTk0yz0nX8FN+Rc4XXhtRAyISUXIxdfQZuJJxAamYjmH5wULLI85BO7zCrQEBolIze/kPQdTWhpasBYXxPf7woT578c6YHU+Cz8c+qROFbGzjOPkRCTiQXveZL2m4/f/CNhZMDv0CS2qkkdI0/cZ2OuR+8HcvIKxXFZiEnMRuNJx3H2VgyajzuG95dfE2bQ60C1E/LbP+/CeshBHL8Rj/3LOiB2R1+0b2BFLPIE7pOsKgvpxA7zcwpha6aNrNwC5BJRNYTJqCEIGh6dhl1no8WIfbubM6atuYkJ31/G8G/Oi8/45ZcxZfV19PVxps5giKV/hxGx8qApvYTepYHktGzx3cZMBwWkvbKdWRaiE7LRcMIJuNU0Rsqe/ti9uB32n38i6vbd3/fkd1Ufqo2QuwOekMp/APM2B2PZhIZ4usMXfdvaiWunVnRAczIjPMYcQwSNGFXIzaNGLSgURGBTg0cLkVJc43+N9TSx5C+Jpa78oDHsbUwQFJWNuDSZ+NyJzoGDtSnWfNQERaTwbNgfTiNZSxCQQQMbGdRZGLYWZL7Qb/GoV4VoGvHuVFYnawNcX98FGvTwAC8HJO7pi6/eqY85GwJhN/QgDl6KlT/x6lEthGR2M+iL82hexwxpB/rh06GSfXYtLBnztkqNf+7HjmjlYQmPcUfwKK44MblBebQxxcxNdIk15yA/P18+Ign0RVdHk+RUMgKCElDLzgg31nfGhVWdcGK5l/gE0Puv0zlXW0P8QGw4iUYfs+VnoK8FRZpIJRvVwoQISdb19lNRyJQTV4GnyTlUxmOoY2+EWz93FeemrLmNkMg08f3LUR5I3NdPaNd9Pz0n7q8OVJtDoPGEY2hX3wI/z2iBpPRcfLEllGRUBHKy8zChvzs2zmgm7mv90Snci87ALerpsdQIy8nI338xFnlEzD5ta+LAN+1w4OIT9P/yLCyMtZ+NKK5GTl4RvBrZYMm4BoiMy0UGscZckq1cQz0itLGBNqzI2B+38jopTlnEkvlZ6fmiIhndq4mQLd3hYmuEgQsvY9/5aPFsz5Y2ovMx8Zp+cAKOxBUUROw86yxO34iBoYEuxvm64dv3PWFqpINPfr6NPQExCP9fL3Hfq0a1EXLB1iBsOBBFMtEXvxyKxPjFF2BuqSNkVFJ6ASYSMX/+uKm4t+WHJ3GN7DuQOdisoSWmDXDDYG8HoWkyfvWPwsTvL8HU8DlrZHBV8ki2ZeQWCfLwNcVlrqWoKh2bEEvV1uJrxZ/NyJHh8jofNHEzF+dyiX3/S3Jv9b/3cf4GlYfuaexZ4xkRvaafxmXSnk0NtUVHSEnOx4m1PujSxBrOIw9hWCd7LJ/URNz7qlFthLx2LxktJx5H5D+9YUDyzHnkYRjoyKBJ7I2LwMT84C0P/DStiThmE2KUjyM8nU3kbwBOXI/HP6cfk+yJptGWS2YDEUKJGAx1q6NMRAY/V0jEMDbUR9dmthja2RG9W9k+Y78PYjOw7Xg05hPrZLSbdgpXQ+MEEfldwqGgq4e4nX1Jm82Cw8CDOLO2C7wbWYn7XzWqz9dKP2P81n6smNgQk/vWRr2x/oiJSyfZJjmnuRjJGQWYMqAe1kxpLM4xroel4OeDD+F3MQZPyI7U1iiCvq6mSiK+LBTEzKVRnV+ogRrm+ujZwg6T+tSCV8Ma8ruA9h+fwjUiIrNqRYfIJk26czN7HFzkhS3+DzH5h1vIPNCX2Hf1ON+r1Wnea+45pif8l3bA1LW3sHH/PWqM5+yRi8Ijc9bQeujS1AYLt4XSSE4gosmgTzKO2SFDur1qifgcMlFGBhOV5S4TtZGbJT4dUpc6VQQuBj0V01/K5U7NKsT6ac0xoa8b+n4RQCZSIU6s6CiuVweqlZCbDkTgY1LNsw68Bf8rsejzxTmYGWo+axAGFyeTGqGAlEUDXbIRiYB8VaLdqyJeGaCyKBqH/brZedyhNITipFxmNmfSs2SI/NMX9lYGMO67D8sn1scH/evI73j1eGnzIyYpG5v8HqKQZMSL0N+rJrKzC3EpJJFGnDWxSC1qBPlFObiBjPS0YGakJRqMlSHRaC8kIr2I+yQ3vhof+kd6pjzIf5s/XBYzUq6YMygTkcHysbaDsSBiQFA8MrPyMcjbUX61fOw+F10lDvqXImQ+mQReU09j4jfnUWPQQTLI7yIrp2xvyOXQFFYFcTY4UcjGJm4W8pmK4g2qaDz6R35GNRREKSwi9lcgoxFTiHTqKGnE5tKyZeKTTmac+GRDOkfXMuieLLqXHez87DPilouyysSaMpsotuLoWlgqG744RBynLPBvbfJ7ACfSbAfNOo0O00/xSfnVyuGlWGu3z87hQkgCbm3oSgL+kfCscGXnjPDAnGHuwp5S4JvfQzF/zQ1MGF7vmc04ZfVNbDl0n0Yg9acXEE0CN7hUZx4F7A/Np78mRgaoaaEND5cacKupDxdrPTGDYWqkKxQjJgKbJalZeYhLykJkfC7Cn2TjbmQSYshkSCFK65D81dPm+WoecYrivLhM3HwZOYX46t2G+HyUpzg3e1Mglm0Oxsej6+PHD58rbrkkb1f9G0aynzp8OtnPb7lhoq8LvGacpo5gh31ft5PfWXFUmpBT193E2p3hCNzSDQ1rmYlzedTLl20Pw5J/7iGLGm3qwLpUwXqYuyUEm/4Ow7rPW+LD/rXFvR//dJtk5n1qaHaPld9giiIKxzk1hpaWNpklZmIU9KBPMzdTWJqWHxVQFlIy83A7IhXHrsXRKIpD0IMUIno+DKlzsSOdUZKVlgSXLz27CMO7uuJ/s6VQk+2nozHsi/N4y8cJW2Y1E+3Cjv2iQmD6oNrULvXJdJE6+lUyzVpNOIbZ1FZLxzcS5yqKShGSQy6mLr2CPaSVvd3BXrjQNh9+hEm9naEtrzxP8H7zRyjinmRAgwxw/++80b25DZLSctFn3kVhSJuR5sd2ZFngonHp+P05NPrqOZvj3e4uGNHFES620nRWVSMmMQc7zjwWMyOBEcnQ1SIFh2S5NErLL2tqVgGV0ZJMkHbCO3T1XhI6zTiDrNRsmFubYM5wd3w2tK54D7vufj4YhS9H1IGmliZ+PxaFd4nwW2hUjunpIn+r+qgwIQ8T7+898ywWTmqA+e/UF+cGL7yAXccjYWVjgqlvu+GTIXWoR0vRab8ejkTj2iZo4W6JsJhMqtgpJKVmwkj/ufpeGhIB2TGeV6iJjk3siFXXQfcWkhyqLgQEJeI7GkmHL8eQ/VooArJEicsoNzdlNmnc+nr6OLrcGy3qmuN+dDpO3U7E+N6u4p6w6Ax8TWJm5+nHyMnMwXt96mDrZ9IonvtLCJb+GozT6zpRnW3EOXVRYUK6jjosNMpbG7uL4xnrA/HjrjuwNNYWdhfLCxNDPYztXZsI7UH3Eu8ksIPch2RqQV4OaYDFXWvK4OIwC2VW5d2kJlZ92EhEt71OhD7OwMyfbuHQ5Scw1odguS8qf36RNvYsbIteraQZnit3kzHvt2CcuPGUREkRmVaSRp6UVoC57zTE4rHSoGg26Sji6dzjv3qLY3VRYa11FQnv28HJ2EXshxEVlwW5nS4MdmaXsqICrNkVippD/TBt3W38GxCNjsRiivJzyyGiDEWkQaYRe7KyMMG+Rd44s9L7tRORUc/RGH6LvXByRSc42ZqRXC0QZeUylwTXjRUmXa0CDPjqPBaTePEmZabNR8dx5hZ1BD3JvOLJbOmB5xrzseuxuBmcJBzvFUWlZOSY5Vfx+/HHSNjZG2bGeqj1zmEkpGQ876n0Sn4pG8rZuUVgF7YRGfcsD1USkXsxaZ+ZuRoY38cNG+TO81eNLOIeJ2/FITohF652BujYyErIwxdh9qYg/LDrnggzKWt0crPyJzOH7tHRKKU48TX2/rRtYEcdxFtELNgO9kMPEh+7aSRXFJXWWh2H+6GOowlOUSEu3UkiW+gkTIjtaCp6mhyK10vlV11hliuGhgbYRhpf79YSK3rVWEMK24L/hSCZFBGeGOYRZm1hjFmD62K2GvGs58kWHvrtZSQkZ5C8L1tUUAWlvyWu5xcUQktbD/d+6yHicPuQonPhTiISd/Ut+13loMKsVYHDS7xw+lIMVu0JRxtPS3w61AMpZGyX7BdcKKlgqonIIRxuThaiQtVFxJkbAjFt1VXk5GRTY2rCgGwgDq/MyMzEnE030HnWOTITyo/Xad+gBsK39kBLD2ukZpau9zNw3UsQRtQ7R4afpzcTRPz5QAT8Tj3CkSUdKkVERqUJybbjog+bYjqxWQ6cWjyuIRrVriGczM96YTngyrC63qOlEwI3doOliaQUvWqwmv/D9jswNNCEmakxdn3VHveJILu+8oKLvQWxQA0EBMag/XQOsSy/HnrEhs+t6oyR3d1IbhYKUfIicL3ZuzSqWy0M6eSIiJgMTP7uKuZNaESdwkJ+V8VRadaqQJuPTiI5I49GVE+hWnOcqZ4WGe2ii6juXfyTPGX1Tg83/O+zFvKzrx6pZPw7jTiEwoI8GBsZ4tYGH9jVIHmgAJWr77wL8Lv4CLLsQvy1qCOGd1bPZzqdtPdVcu29rFHF9S4olMHeygR3fu0hznmMOSLmNK+skyarK4tKj0gFNnzcBGFBCdhLmmldB2MycOsJmVdW9+DKsNY33Kd2tRKR8cWWO8jMzkFuoQZ+mdW8OBEZRIAD37ZH77YuqOdhgy5N1J8U/vGDRpg6wFN00PLGRm6+DNMHSbMip27G4d7teCwd10AcvwyqZEQy4W5v6oZCkiu13zuClLQs4btUKRtIJnZt4YDDpM5XN5xHHkRcYibaNLDF6ZWd5GerFu9+dw1/HY8QMyWlR6Y0IqGpQ/K1J2qQfOzyyRk8epqF+9teLrbnpUYkR7ZdvhqHrbOlkTXhh5uIiU+XJoBVEJEJ7ulaA4cXtZefrT5ExmYiMS2fF1uhX7ua8rNVj23UFu0b2pI5oUoB0hCRDdnEFcZ8f12cYU09PDKdtOj74riyKHNEfrw+CJlZuahlqw8XW2M4WBuipqWe+PCsAtPJfpgfujazxu9zWuNyaCLaTTsBMwMtFf5TyduhqaWLuyQbbCxKsLRqwMGLMej75VlqSg1cWueDVh7PQzeqGjyVV2f0EdKCsyT7UUWnTsooxMFF3vBtY4c5m29j9Z4IpPzbT0zvcQwv6x2xyXnC9/skIQsPnpCZY6iHuSOkmKGSUElIXgPRYsxRNPS0ol6chwSytfJz6bYC+mjIoGWoK2YH0rPzkER2D8eBtp16CoHh8TBgg1pVwdML8e83Xnirvb38rGqcC0wQYYrFYk5fEkYG2vhxdzi2Hg4XYYvb57WBlamemAorC9woXI2W7pbSiQqC7UzvGaeoYxPbK2FbU4OIME0OmA6ljs2T8hYDDgiXHYddZ/Cyg3wyfzToOW2Qja1NrFoHT4iYwdt6or6LNNukDJWEnPzjdRy5Fo8IekiB5PR8xKfmiM+jp5l4GJeHOvbGGNzRXkRUvzWvdNgGg1/PcnGkjxt+U0O52egXhUlLr0DHsCqJySyNvTASgTh+lcMXywPPX9Z1tkToL13kZyqOzzYFYeWOEOG2VNUubLJsnNUS43rVgt/lp7hwJwmu1rpwIu5nY2kAa5KhNUx5TlXyNtkP98OIzg74fnLpEMtShORDs7f2Y94oD3w6zEMsPXtI8sXF1kDMn2mriAprOuk47j9OLhXLwj1Pmvg1ROQfvaAl2SQvBDsZpq+9BnMjUhhKErN4cdUGl4s/XL8SVS4Nui+bZFyfdg7YSXbmy6D+uKN4FJsqIuGLE1MSN2YmRoj6s7iDnDlFWmY+YpNyEJWQi9bu5rAkgn71WzB+OvBQrMouiVKEPHiBZMmcAMTt7Qdrc31MXHkDm3bcgRYZ7CZG+iJ6zJREHC+WcbQ1ERFu2/zDVbqp+NXJ1Ov+/qKdiBOtCOb+EoylfwbD0qR4tBrVXa5IiFNqgY18FgUMfpa5VllgRc1YX4O4iAyfj6qPBe9JsxKVBZsYPp+dFlpsyQl0rg8rgE3r1BDESyLTJTMXyMjKIzmbi6ICKigdzxpdHysmNUYkcULXoX44uaoTOjctPs1VipC+n58jeZaPi2uYpchExHRqepZwYbHnQkYNyVyJv7OI4aJxwHFJIvKz7OWpT1rq5XWVY0/snOdlBWxkMzjGpnvLmviGKpaala8WMZlLXAhJFLkHCqhhVkxuinb1LQXrLAmWzSEP0/Hhmps0IvOwY34HDO7kIL9aeXAY6JmbT6gzqdYfON6Iq8LMhy9Lf6X7mMBWFkYI/580apn71XUworIVd6wXI2RyWi4sBxzErgWtMdDbEXvIvBj4ZQAszBWaqPRyJpL8f4HSRJQKyJrZsWUd4dO88hPC/edfxKGLUcL7waDOipUfNsMHfWuJY3Xw075wTCNWraWpJZbxiUU6ZYAj2lzfOSwIeWtTdzR0fflptMAHqWg68SjMjKQ5yNJ41pLyv3JQGxbQqElNLcTJ1V3QuYk1tvo/INPlBjL29RcLexUoJrSO30wg3lOAkChp0ekAbwd8MIjkZAZHqUnRZhLoB6lATEBVRGTwopvm7lYvRUTGvq/boqWnHTLk0Xm8zODDH65i65FIcawOLoamiCbiZevlEZFhYaIDfS0Zabq6cCaloyrQqJYZerSyFxEPqtkIl654O3Jbc1RgZp4GVk1vIYjIyMwlOpBZcujKU3GsQDFCDu7ogKUzmmLexiCxtiGeeievxTi4pCP09fVFGKEgpsrCPAffw7x+9tCqCdA9tdwLbo7mYv6OO4459eyxKy5j/4Un8jvKR2B4Evc7uJJN/CLwhK+luaEIRGZ7uarw+Yi6yMknZUt+XBa47ThEk92Y7s41ELy5h1jExCllen8RgCnLr+PTCQ0xsENxM66UGjl7mDtC/teLWEwebAb7YcvhSPi2tiXNype0OCehMvNwL5uYkhvK0caIFBwn+bmXA88ynP2+IyzMjMDrMpjNm+hrYsjXF3DiRrz8LtVg4/pxQp5ooGZ11XMCDOroiJHd1Gfd6sC7kTUa1jIXnK2stuMycv1y8jXx5XuNcWNDV7g7GmP76cewIlrcDEvFpc0+WDaxYSlOqNIe8HQxQdjWHpg12A3jFl6E79zz0CNFYPeCttg0qzVyCrSEWaGqQHyKlZxhVUREBWqY6YuFq9o6eqIx2MbkGfp+8wMQRDKoLDx8miWiFzgTTTM3Y/nZ8rFkbH3hBK9qjO7uTOySWKP8WBkKItrbmJGi2RUL360nzg+i9h/2WQDe6+aEJ9t90dpDtYNCJSEVYJX37EYfXLqXDIO++3DkahzG9nJB6JbuYhqIg61KQpwh9jSyS8XMDXXAIYZHv+uAQpmO0OZYk9aUFaDzJ+dE7JAq3IpIp96rKezf+i6vN/5nCI10HR1tVf1fOCiY49z7tRuauJnhBOkrpv334ej1ePiv64xNM5vL71SNcgnJ6NDICnE7fNGliSX6zwugMzLYWeqJ9YmqFB12NznbGIvUYq8CrTwsSPVuLeJ7uPLsy8zJyULbj04iOqE0Ma/fSxTqvB7JPF5x/DrhbGsoOpPgZiXAjo+niZl4HC8lpOCsJ01qm5Lx7yuCsF+EFxKSwWysjoMZPJxM6UgDZ24niqCiUnSkrsa2nleDyvkn1YVvm5rUQ1uSvJY0aY7MSyFb13vGGaEUKCP4UTYRshCO1iYwM66eKITy4NPUWsxJlhyW3JRFMg3iepI22sjVCFakdHHd1IFahGScuvUULd2ZkMC5oHh6sHSv4qJxIasjkHgMsfjFE5oiWRCTnRJaYgqt40wpC5YC96KS6V8NGg2VW1JQ1eje0uaZA0AZPCg4cdP5EC4v0K6BFQICi5sY5UFNQsoQ/iQHLeVTPzcjMkGsvhRr5QbV1dUh9lc9smju8LqYNcRTqOoMdhMGP0h8RkxOCRpH2jf39Ma1Xg2rryia1DYj/UJPcJLi0IAOyfygh1J2kOYkJ+OT80txmLKgFiHvRKYhKyUbDZwlGcOrmFjRKAl227FP0dWu+mTRikkNMbyLK1LlxDQx0ML5wCcYsPCykJlMTFbKGlMD/hfA/msbM47Kl59QgpaWBiltkjPG05k07NwCPHxSdhIpZagkZGZ2Po5ee4pp626i3pgjqP/eUeiZGqKuo6lQMJKInbECURJ8zZE0S86yWJ3484vW6NyspvCfMpMwM9KG/6UoDJh/AQbaMuIe2qRkqGd6VAfqOFmqXBjMZc8gXYdnnBytqR1JRjaeeFzM9X69LUQsu5AEWGkIQvIwP3s7QTiWOR+OyVv70YNsl0NX4kUEwKHlHZC8uxdq1jAQPZxnwEspOgR2FLjaPM/CUZ3glGKKyARm+by2Ijohgy0h4ZN0tnk1q7cqA1drPcmpUoIo7IfNyc0T7JQnwxN29MTf89qIKcR1ex+IrCjG/faj++xzIjTk3uPno1U4zaeuuYa1O+7DlVTjbkQ49uTw0nBzJS2Pe8lp0lZ5HcfO0w9Lzz1SoTgF2Njebvjp4+qNjvt62x0s2BpYLIGSAHXQ/EIZbCyMEFZNiYvUwaI/grBw6x2YqMgTxM6Ohm410L+dI3xbWaOxPOcPIyouE4cux2H/xSdkOSQgPSkLe5d5o397B4mQIxadx5U7Kbj/u6/8EWlJ27nAJPhfixUJADkIOTM7V6wA5t5eUtHhRkvLLsKX73hi/rsvH96nLtgf7PbuYWihoNjENTcKKxA5eQXo2NQRhxZXfjVwVWPjwQh8uOp6mREVisQT7MiwtdCHV0Nr9Gljh54trelYyo7JsB1yEKsmN8BwH1eJtSovrikoLITXxydhQzf1mH0Sq3eHIuxREnQ0C0SPV0lEOZhbmBpWr602c/1t5OblPmOrDG4MEXZIXILnZj0cqj/YqzxwGxGZ5EfFwW2rSDxhaqCBjKwc7A+IxJjll+A0/BCaTT4uv5MnwaX7GUrKjsSvC6kBAh8kQ6MwTxCOMyjqaWtSQ0kELIuIEji5X/UpOlfuJuGfk1Ew0iseRcA+yyZuljRCtUT4Y+M6ry5irjIQKWfKa0ZqR0Vbc/gk28jmRFgD3SKRVUsBZQmrRMjn4M5dPsHKAq9xVH79qwXP5OtoMQuSnyCwqWFsaCByFXDQl4xljsvrdc2VArdRJZqJpYUkMkpDiZBSa2gJvmwETibM2Zw4poQ1LH6B9JKyS8ANms15VasBfxyLxNXQBCGzlUdjelYRvpvQEInphcjPL4CxsT7cav63CMkTxuXRUdHWvNSPwyZ5FXgy2ckyDR3Uc1ZtDwtCsk3Dk5kMbRr2d3/riYhtvbF+eiv0auMIfX3dZzlqmG1JBC0NHslJVZD850Xg8n6yKYhkiLK8ljJDerqaY3QPFwSEJIhrVqa6Ygrsv4TkDJLpZZCS25YXB/O8b36RFjyca2Dq2+448l1nPN3RB2eUljrIiqSoQIYgpKudCR48yoDlgAMYtPACth6JEoFIE3xdsXtBO8Ru74fzq7vgy3cboWEtjvhSjE4lUKPx2vjY5FdPyIW/hyIuKbOYd4mLw/E8q6dIMZ+hkWmCx9S2/+/YjwpEx2dTc5VWd7hNeS53YEdn7Frghcg/euPqT12wYnITdGtuI7TZfwNiMGnlNdQe7Y/YR6kkbyWd5FnwFcfp+JF9so8+l0JTkEdGqb2dEXyaWWGwtyN6trIRnnjOglhz2GF6MFeERSgjh655NXGE/5JXp+rHkOHvMcZfZNlQmBtcBQ5z7NHKEfu+aSdYkgNpePEpGZjytqfIe/BfwqglV7HnTAQM9Z8nlGKwfpGdryHiXNmVl0ei4dTtJPx77jGOXI9H+ONMMWDqk8z3bV2T7Mea8GpQQ7I6FIRUBk/acroxzovKSYRucFouekH41u7Uw41hP+wAssimLOlvZWPWxtIQYVsrlpGiIhjw1UUcuvSoWBwti4XsfE3c39oLjtYGiHqaidrv+NEVGTbOaImxvlKSpv8K2kw9gZAHSaWmqFhkaGrrioweLEcdRh5FTkYOPDh4ix017YhwnhYwURFLVJwScjCB2jewxKKxjXB9vQ+i/urJrSXC+hi8ZYOq6AAeoAmp+cIL9CrA8an7LjymnvyciNwPOZXLrMHugoiMkKgMUgyI1Wtpo14VhDNWJTj3Hq8MU7UcgpuUo+sNyJy6/zgdOUlZuLnZR0RkrJ7aFL1a2qokIkMlIUvCydqIRpoebj+QPPMNa6lOBsi+wrTMXNyNkqZiqhqTfrwJzob9vAmk4F4Ha2PqdM8jwjljlYasCDqaMtJYn3tC/gt4QETkAHBlB4YCzAndnaXpttsPM6BjoitCKdWBWoRkNHIzI3abIL63djclk4T0rhKDkovGA4UzPVU1OJovMDyhmI+Xf59V8x8mswx83jBBUVl0VAQrSyPh4vovgSeO8wsKSjU8cxb2CzetJZlKl+8kwI0UtVIrucqA2oTs3swGN8Ilb7t3IxvVyjO1pT5pu8dvqj+zrQ44lQlnjSqejF5aN9GhsR0GehcP678XlSrusycuokzg/wL8rz4RMbOqwIOjc1MpuuLy3TT4kKaqLtQiJDvQT9+OQ3RcBjJIm21Yy1Qs4iktJznrk4ZIRK/YDKUqMOeXYDI3MoopV6zh5VPF1yrlP2dwz2Zlh2WkexUFW7Haz4kGy8tFqxaobGcDE4XLU7AuJfCkPKdF9WlqJZSeQFKGYhOlQCx18EJCHr7yFJYDD+J8cApOruwMY3lqSltzPfHjJcG8n5eEcfLBqgATZd2/4aVyn7OCM6mvW7FpHgZnXeR8P0zohrWrRtG5FZ6CoR+deuk6nQlMQGxStogEKAVqSnamJ1PbsVnFy/l2BTwRq8LV2UCtHELKMHbFdfSedgr929khZW8/dG5iJbL+u73njzuRySLGRBX0tGX41V/9tRnl4YPVt2ick0xR6sHs2Dc11seKSaWDiHktZ1ZWDhWf7C0Ol6gCBEVQQ5rr4Mi1OPmZymHr0SjSVlXEeBB4AKSksdnkj39ORWOAlz2y9vdHXUcTNB99RCTqLw8qKXEhOBE2Q/zw16lH2LXcG39/0Vqcn/fbHZEnIC4xvZiPUxl8jhWSkzfjaHSozxpU4dStOPhdjBbL0ZRHI897fje+kcq8cSGPsqhWVAY9HVIWqoaQ1+6nQUNHhnPB0raElUEOyfN/z0WrzInO4HNi9z2NAoxcdB7vLL0qZj1Of++N1Z+1wIJfAsXOeNxRVaEYIZkdzVh/G+3pAQ5NT9zVRywWuUPmROOJJ7D4j0AY6spUrL4tDr5WUJCPFTteLlPF1LWBYtHps58iIrK8au1phfG+Uv7TkmBDmxkFp9f2cKqasJPAB2miUe9Hp4lVxJXBhgMRSM1gb1j57cbXOY3q9hMRcBx+GKdvJWDqW254tINXKctQa6Q/1u4tvdFpMc/OtqOReO/LC/h5fmtM7CN5Q37YdR+fbroNPc1CMQLKI6Ay2CbS1NQR6xX0ePF+BcEbe05Zfa1Y+AYXNStPhiXjGqONZw2htSqDRy5nyLh8Jx6ONsb45ZNWcr+w/IYKgn+WVzDztoWcvTGDaPjPl23EIp+KwmXkIaSkcxipevO1XFf2lHFifU4BsGyCJEZEvvRNwfBb10XsFKRAMUImp0sLXXd+1VpsdyAtQz8HczPOL0q1KkVEepSfVkFcfi3Hmy4c3UiEf1QErPHWeucQ8vPynqXWZiiKmkvKY1mzZbx+khufuUsWL2OrJBGVYURWDFef/bnv9azzLLm+utjo9wCTVl6FpbHqgaCol7jy/B8B1mBT0gpx9PvO6NbCBr8fo8H23TWk7e1LiudzL08pX2vvuQEiG//5VV3EDziN8EN6ZvYz1Z/P8RP8EM98sebKrFbVSlwelVrauoj4X88Khet/sOoGfvG7L2JUS1a8RHFVgp9R576KgN+ZR/ZsTSsT3P31ebaTF4HbgDtlWka2ytHI5RTrPuk7Kzw8YLjK/OE25edrmBsjQp4Zq9nkY6htZ4RdC4pPTJRSdj7sXwsXbiaIPRq58OxlT0vKR1JqPhG4CHlFOtDRMxAJd9mB3r6RHRFUGgElwYXifZA/JVagLjgx0KaDESQblTvO88+LoKrHVwX4t7U1NUU2x7gKKHGsbT5JLD7lpgC/k5Puj6ZR/pZ3bbHC29bSAIYGBiiCfA44IfdZbqLHcZm4GZKMKfKdGpRRakQyQcze3ocF73pi1hB3Eu65uBqWDBcrffoRfTJatUlWFpd541ZcoyHPjV96BPH7uEABNMI5r+uL4PXxaZy//YS0TvVkiTKYM4gceAReh6iqc70scjMKsfWrdniv+4t3Aggj5ajJxONiHWfJKT9udpbxXZpLG6OVBEdapGbki+WC7mSCcGjqgq0hWLcvAvG7+srveg6V01gTfriG49c5YZI0nHnHncT0fCSk5git7XFCDh7F50JfTxufDnHDEzJy3cnW0SbVuXQuHZnYuMTakhfPdi9VIWVEPEnHwt/vim12KzqweHkd759xIyyRyqCFoZ2cxEpnFdV7KeTkF8G7QQ0aRS9e0dx88gncfZRIJoeqDl4k8gPc2NAN9V1M8euRKDFr5GKlBycbAzEfyUl5TeQOGIbDcD8M6+yIlcK3XBwqCcn7VbQaewwOTsZiP+PsHBKGRAyeygKNFAPqHRyuF/s4DcfWdBEJH2asv4U1u++KcP2Sheaf4CS773RTL/tVZfHRmhvYeCAMNcwMSFvuJz/7evDJxttYuT20dNA0g9ojjRS6IZ1d8cfc1mIDmSajD8O0hpHwikHh3qSOqEOqha2lISlKOrgdmogg0jcauKqZwozBWZY4xpVXCde0khIK2lnoiSHOaj575d+efwHXw1MR9UcvGrVFcBp1CNnZLNR51JUmJucy/eXTNpXaoEQduI70I3mUgbYN7ciQrr4t/0qCU7r1/1JK6VZ6ukqKuS2Ctti219pcD60+PC44Gec24pwHvNt6DHG+JyTWHidkIyo2HQ9is0W+nZWTVAd/l0lIdfCI+Lfz4ANY9lFTsQfx9lOPMYxsLuVsVcpgVTqnQFPkQ+9UwQ1KXoQvtgRj2d8hwpG/bW5bjPJxll+pXgSGp4gte9mtqLyHswLc3LxH5qqPWohsHWIHnvkXcXNbj2dbAlcGZQssNeBkY4j54xti9uZgQVROUza8ay0RQKSqf7CzWEezEH2/PF+lk8+8gdp3f98hzVCGei4Wr42I8aTpd5sTAFlRvrBlVRGRoxC7tbAXRMzIzsfkVTcxbpDbSxGR8VKEZEzo5QJZei52n4sRxx8PdCPbsvRolCD5E1FUgPbUazm3WkVw8U6ymIkIfpiGU7cTsPjPUNQbexQLt94mccLxLnrYs6CN/O7qRQopKi0+PCXlaC3HhcmBFSN9JM8QZ8LMJNa5ZNzL5btjvBRrZdQfd4x6H3B7I6fCLkLt9/yFF5/tprIqI/XMQhgZGuLIUi+1euPczUFYujUImnL7khe4cPohLU0Z8goBN3tz7F3YFvVdpeXx1Ql2ZHf59ByeJqaB89WWVW8Gt1GBTBuhv3YXsU+siXJuhhPLveV3VA4vNSI/2xSIO2Rj+slTW49YchUx8dIEcHmV4WscQZZFilH7aSdxWJ4AoTwwwUQiWvlHxkWnv7UcLLDyg+YiL9DrIOLlO4k0Eo+LGaEXEZHB4oV3ORj89WU60sCBb9rj5NlorNnzilJhvwic6dh70nFsXdAW7/Vwwe/HH+HdxRfKVHRUgX+aXVAZuRpYNrGx2AWnPFwKTUZCSjYRkdOY6YisUK8jrbYCv5HtN2HlVRiQwS9tIKp+vVmDXzSuiUhtLTZJJY4T8Vcv1KpZuam3ShGSEwZaD/ETqUY4G1ZMYjY8xx6BBsk+ZSe3hOezD6orKi384ewcfds5Yduc5kQk9f2yrwOssIz//obwZpnLTQxVdVNu2pLXRSxungaur+8mOEmrKSeRlpUvcr5XBpVirQMWXKQewFM60oTzoK8viZkK5RAGrgR/WIPlieCy14zw5meaYmbg6JVHwkO047S0E95/Ef4kBuq+749/TnIeWS1h/5VFRJ47zciFcIqzJ0eqv9QG7BDn9NwDv74ojjkL5r2odHz8001xXFFUmJAbDz6A38nHOPBtO8FOpv90CxeD48TEK1eIC8sjjP2ISRlFaORmjYOLOqBDE3uReUM1MaUey9Hjubk5GP7tBXSfHYBQebrR/wJYw377q4vw/fwsUlIzVc7MKMB1ZKPe09UKl9d1xdAutYU7jrNrcpgKX+dHOZKC8wCN/u6qyM/w62ctsfqPezh+reJRiBUmJGuP7VvbitRmDJ75UPQyZhc8Z5dFhe7czAEX1nTFhdWd0KOlHQ4vbo9+Xs5CNpTlzOaG4TggjrYOuB2DBuOOYNSSKwhTSnpQ3eCUYpNX3YD7+4dx+NIj4a0pTx4ykXge1os67uW1ndGktjm2ftYCj/7qg3F96qJIQ0esapNWVHPLacDOUpLz7/d0gZubCT7eoP5skQIVlpG8q6nvjHNYNKURPh8pZTAcuOAC9pyMhL6RHoZ0dhaJ7Xl7Jcaq3ffFDqXfvi/dO23tLdLQ7olswtLcm+oGoRYRIfTMlqChBZ8Wdpg5qA58mlWtR6gsXAhJwvc7w3DoUgwKCgqIWyjcbWUTkOdmU4gLjfBxxZ+ftxLnf9gdDmtTXbzTTcqWmZKRh6X/hGHjgQgkJ2ZhlG9t/D5Hunf+byH45pdgHF/VCV0rENPKqJSys4pU5elLr2LvD53EiqBcMuQW/RWGqW+5Cq89MQ8s+fMuvqMCZ+TkoyhfhkGdnbBzviRTOWr8wx+vkZlSVCxyXBW4eFxCjq1lmrramWJAB3sM6+SAVmWkvKwsbkWkiN3Kd5+NIS6QKlZDc5AZy7MXlZHDMph9fjexCT4ZLCUc5iUOG3ffY5sDDnaGWDjaE+N6SbFGvKptw8FITO1fSyiIf56IxKi5F7Dxq7ZiOWNFUWnzY8qam/iJelvIb93h6SLZb2mZefj693tYuStMzAvOoAoteKceAh+mo/WUE+I+zrnK0QLMLnkt5sPYNHFveQ3FUBSTzRXOeFFILJ2neVrVs0KnxpZo5W4Jdycj1DDVEzZqeeBGT0rPE3lqeOrrTGASLoXE42lKLhGtCAY6cg8U4UXlopLR+2RiE1GONuStAzkyvvMnZ3H+RgKOruyI5nXN8MnGIPxK+oWZmb7Y0n/6QLdn7+a41ebjjmLWSA+RWrUyqDQhGV0/PYtrd5NweqU31ux9iC3ELkyoIecT8aa+XbtYg3I6Me8ZZ0lG5sN/SXu0rmeJfedjiC0HiCmxFzeYEqjIXGh2kDNRePsHoq8I8rIw0YepPtmZJrrEvnWlwC9SsVlrTicVkuf80nLYpZaDrBzWtHkyWkoXKlg9v78iZaGSpGUWYsnEpsIO5hVrveaeFyPuLHGsBkpOCk4ls/iPO/hxVwT09DTx+Yh6GNXVAQ0nHkfXpjakFFZ+j5GXIiRPudR9/ygePUiBo6sZEdCT2EIteqv8hhJg+9Oo717MGU5G8JgGQlvbfuqB2Dy6Yo2nBDlR5V+FnFL8FTqV4iK9nkUcdxj+q/guv1T536cfYBOrdT1rnPi+Ez5YfRPbjkaJHLfKuwAog+ccl+8II851H1kJGajrYUX2Y/dn5akMXoqQDHYGXCTFoORCGlUIjUqD5+ijCNrigwa1zMUm20mpGcTGirNCLhKXiusl1a2iFaSHy6pVpd4nlYk7hyp5yf5TaGgjee9bOH4jFt0+CUDC7r5iW8HywP7mzYciMbhDTRGr8zKolENAGfZk/6hDRMb+i7GwtNAVRLwfnUGqfaZgbcrgBhPTYKSpckIEDhNhc0X0N/6oBWpoRS8o+VGXiPRbUofiJBOFoixaWroiFkiURQmszaZl5yMgOIG0altoEps+cu3F60RY9HAg1csSkfHShKwIdp99TLJA2r/iIJkxvK2PcrNyA6WRId26gR2i/+6DbXPawt2lhthYmnPmsKdEYp3qErTi4Hfzb3C6ajbgU7NkcK5pjp8+bomEXX3xTo86whYuWQZtUpL2X2DiaaBtPXPsCaiaRUzqotoImZ2bj0v3UsXeIoy9ATHgnQvEICFww6SToezVuCZOLu8g5MtIHydc+6kLbm3sThpwfdS0NkMmETWLNzF5BcTkdzI34JVeVubGmNTPXXhmgjZ1wyTe+YcKu3F6U4zpXVcY/YoyMKvlOUjFaq23vRxw9PrLLfipKF5aRqoLzv/a49NzSPy3L3jXO9uhB1FUIGmNXAQeiUzEUyu8aaAWwWvmOdSpaUianQfqOT9fw8Emww8774o9s5QX9yjA71Ks23x2hb/QKT7LteXZe1XPcYScbxtHsbGZsrbJa/7ZiI9JysfehZLxPnrZdfzP//6z2R72peYVaeHJP76koefAc5Q/Qn7vQSZX9ST8rbYRydv4elDjWJJ54n8tDkkkHxncgOyD7dTMQRCR4TnuOMKiknE5NAmeIw/D/X1/LP0rVChWPHXFRrVI8F4C/C5evm1lbgAjfR1okQzS0qK/mvxdWyRZsLU0EvfwvSXBo3FIJydBxLiUHKzaHYYmk47DdfBB+NFoO3o1Gh1nnhH3bv2suWCzHH/D7+LXZdIzhy7HU8czhYmFHvwuVx97rbYRaT/sICb6umLB6AZITMvF7M138PvRCOQSy+1Bo8B/iRc1RpEgYmJqDu5s6SEM/ktEzE1+D7DrTDQKZZpizUPY4zQ0GH8UJmKllmJkSZmvbGtw/OzzkH4enfwfR4kr0IWM9cshT0WmS3qBOMfNwLLv5IpOaN/QCsZvHYS+tgz92tljQm8XESwWEZOJeuOPoUODGjhB7J8xauk1/EkjU99AF+/3qiU2f+FIwxGLLiMqPgsBP3YW971qVMuIZNb05HEWboaniuXb7H3ZPLMpAlZ3xYR+HoKITAgmImuyd7Z0F0RktKlnSfe2ENM86em5NHrzxJ5VemIjlOd9kL9mkOxkfyyDlx5ExmbgaVI24pNyxHfFviCzh9VFNo3okj2YU2bbkRbOO9bl0W+xF4r9oIqIv9r2Rgjd7IOTN3hPyPPi3B9zWuDTkY1wca0P1k9rKoiYThpsbGIWzgcm0iivuiX45aFaCOliZ4Tti9rjbFASjPruww+7wsT5FnXNsXFGU/G9PvX0aCJi2G89iYilZ/0FYYklppMxbWasIzwxSmQU00M25ob4oL8bbt1PRu3BB+A69BAcBvnBnj6uQw7BcdBBPKJR0quVHTyd2ZVG9p/8LdwpOEWpBXWy2MQcahkNQZSS4PUuvFX/ieux6DnnnDi3bEJ9sdkKY+nf92DaZx9CqOPu+aZdqeUVrwrVJiOHdHZAIqnv89/1xMz1gbAffkhM0rIx3WjCccTRqOFkhjwvpwqcKIGRQGyZQ/B1tFlzFaek0ZhTiKkDpFCRGT8HoVkjKzzY3hNBv3VDIH3C/u4JZwdjkbed8cnQOkI7VX6HLv2ElYkuYlPyoEkEUPxmSTSqZUqatA+O3oiH7zxpZP57/gmsSZZ+8Wswvh3XAE+3++LtF2wMXpWoNkIKkDjiGYCnO33h3cASvWaeRY2B+0Su7uDN3YRzoSyYGFDP1tXC02QpqxZrvgoisMOAt3afPbSuYKknz8XQ79QXMyXsfOBd4uo4mOLzkR746zCvscjFmJ6uxEYN5fOCEptlc4iNe94yXk9HBmPOzlQGePuJm+u74hDZjjWHHsCA2efQq6UNEnb2wRejpCm76kT1ElIOG3N9/DOvDc6t70LGf00EUe9+kXfDmAjJi3J4QxYGJ4PgWQaxGIZG40Tf2mI6iPMcOLiaCSWlJCb1cYWekTZW7JBY+8xB7vQspziVnO+8VJDBi5IsVLDVkmBiXljTGXWcLHDll27YRvLUgkb068BrIaQCnNnwyOI2cLJ9cT4cjusxolHCy/wYzepYwdBAD7mFWiDbAl+95yG04T+ORmHZ+DICfjU06T5P/Lg7XHSAmYPriJGcR+/gHVxbe0pLuR89zYC1UhL48tDW0xJnv/dCS/fXvNMPmx9vCtxHH5Z9tvGW/EgmI41QdicyTXYuMF4cz/jppsxywD7xvSykZ+XJNHvuka39N0wcX76TKAuNSpPl5heIY8bb88/Lesw9Lz96M/BaR2RFwcvlrt1LQgyZEUVkc7LTmb0+XmT3UV2wak8E5gxzl9+tGiz3xvdywjd/3BXHrci84ewfvHsQj1I2U+49zoSVcfmT0/81VJtDoCrA8u/7HXeRnVUAbX0dOFjqiO12OzYwx73odGw9Fo2k3X1eqPJzNi2XEYexcIynCOUICEkR+0w+SS5AYW4BDA1Jjk5qQKZM1ewRXR14owjJ4IwfvJY+MDJdhEhcCU3BrYepiH+Sjs/HNMKiseptHjPs20vYfuQB7GqaojGZE7zBaLM6ZmjgYipWmRmVMSn8X8UbR8j/D1UA/g8AbBQGoeqxyQAAAABJRU5ErkJggg==" alt="logo" style="position:absolute; top:0; left:20px; padding:30px;">
+</div>
+</div>
+<section id="conjunto-de-dados-iris" class="level1 page-columns page-full">
+<h1>Conjunto de dados: Iris</h1>
+<p>O conjunto de dados consiste em 50 amostras de cada uma das três espécies de <em>Iris</em> ( <em>Iris setosa</em>, <em>Iris virginica</em> e <em>Iris versicolor</em>). Quatro variáveis foram medidas em cada amostra: o comprimento e a largura das sépalas e pétalas, em centímetros.</p>
+<p>Fonte: <a href="https://pt.wikipedia.org/wiki/Conjunto_de_dados_flor_Iris">Wikipédia</a></p>
+<p>Os dados podem ser consultados na guia <em>Tabela</em>, bem como as imagens das flores:</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Tabela</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Setosa</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Versicolor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Virginica</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">|&gt;</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="htmlwidget-52349a87b28f308996f7" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-52349a87b28f308996f7">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5,7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3,3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8,3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.4,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4,4.7,4.5,4.9,4,4.6,4.5,4.7,3.3,4.6,3.9,3.5,4.2,4,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4,4.9,4.7,4.3,4.4,4.8,5,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4,4.4,4.6,4,3.3,4.2,4.2,4.2,4.3,3,4.1,6,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5,5.1,5.3,5.5,6.7,6.9,5,5.7,4.9,6.7,4.9,5.7,6,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.6,5.1,5.1,5.9,5.7,5.2,5,5.2,5.4,5.1],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3,0.2,0.4,0.2,0.5,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.4,0.1,0.2,0.2,0.2,0.2,0.1,0.2,0.2,0.3,0.3,0.2,0.6,0.4,0.3,0.2,0.2,0.2,0.2,1.4,1.5,1.5,1.3,1.5,1.3,1.6,1,1.3,1.4,1,1.5,1,1.4,1.3,1.4,1.5,1,1.5,1.1,1.8,1.3,1.5,1.2,1.3,1.4,1.4,1.7,1.5,1,1.1,1,1.2,1.6,1.5,1.6,1.5,1.3,1.3,1.3,1.2,1.4,1.2,1,1.3,1.2,1.3,1.3,1.1,1.3,2.5,1.9,2.1,1.8,2.2,2.1,1.7,1.8,1.8,2.5,2,1.9,2.1,2,2.4,2.3,1.8,2.2,2.3,1.5,2.3,2,2,1.8,2.1,1.8,1.8,1.8,2.1,1.6,1.9,2,2.2,1.5,1.4,2.3,2.4,1.8,1.8,2.1,2.4,2.3,1.9,2.3,2.5,2.3,1.9,2,2.3,1.8],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Iris setosa](img/setosa.png)</span>{fig-align="center" width="300"}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/setosa.png" class="img-fluid figure-img" width="300"></p>
+<p></p><figcaption class="figure-caption">Iris setosa</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Iris versicolor](img/versicolor.png)</span>{fig-align="center" width="304"}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/versicolor.png" class="img-fluid figure-img" width="304"></p>
+<p></p><figcaption class="figure-caption">Iris versicolor</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div class="sourceCode" id="cb4"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Iris virginica](img/virginica.png)</span>{fig-align="center" width="300"}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/virginica.png" class="img-fluid figure-img" width="300"></p>
+<p></p><figcaption class="figure-caption">Iris virginica</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section id="inserindo-código-do-r-em-linha-de-texto" class="level3">
+<h3 class="anchored" data-anchor-id="inserindo-código-do-r-em-linha-de-texto">Inserindo código do R em linha de texto</h3>
+<p>Você pode automatizar a apresentação de seus resultados no texto:</p>
+<blockquote class="blockquote">
+<p>O <em>dataset</em> iris tem 5 colunas e 150 linhas. As variáveis do <em>dataset</em> são <em>Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species</em>.</p>
+</blockquote>
+</section>
+<section id="visualizações" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="visualizações">Visualizações</h3>
+<p>Podemos gerar uma matriz de gráficos de dispersão interativa usando a biblioteca <code>JavaScript D3</code> do pacote <code>pairsD3</code> <span class="citation" data-cites="pairsD3">(<a href="#ref-pairsD3" role="doc-biblioref">Tarr e Bostock 2022</a>)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-pairsD3" class="csl-entry" role="doc-biblioentry">
+Tarr, Garth, e Mike Bostock. 2022. <span>"pairsD3: D3 Scatterplot Matrices"</span>. <a href="https://CRAN.R-project.org/package=pairsD3">https://CRAN.R-project.org/package=pairsD3</a>.
+</div></div><div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pairsD3)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pairsD3</span>(iris[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">group=</span>iris[,<span class="dv">5</span>])</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="htmlwidget-4dcd72e59444093b1d0b" style="width:100%;height:464px;" class="pairsD3 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4dcd72e59444093b1d0b">{"x":{"data":{"Sepal.Length":[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5,7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"Sepal.Width":[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3,3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8,3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],"Petal.Length":[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.4,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4,4.7,4.5,4.9,4,4.6,4.5,4.7,3.3,4.6,3.9,3.5,4.2,4,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4,4.9,4.7,4.3,4.4,4.8,5,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4,4.4,4.6,4,3.3,4.2,4.2,4.2,4.3,3,4.1,6,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5,5.1,5.3,5.5,6.7,6.9,5,5.7,4.9,6.7,4.9,5.7,6,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.6,5.1,5.1,5.9,5.7,5.2,5,5.2,5.4,5.1],"Petal.Width":[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3,0.2,0.4,0.2,0.5,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.4,0.1,0.2,0.2,0.2,0.2,0.1,0.2,0.2,0.3,0.3,0.2,0.6,0.4,0.3,0.2,0.2,0.2,0.2,1.4,1.5,1.5,1.3,1.5,1.3,1.6,1,1.3,1.4,1,1.5,1,1.4,1.3,1.4,1.5,1,1.5,1.1,1.8,1.3,1.5,1.2,1.3,1.4,1.4,1.7,1.5,1,1.1,1,1.2,1.6,1.5,1.6,1.5,1.3,1.3,1.3,1.2,1.4,1.2,1,1.3,1.2,1.3,1.3,1.1,1.3,2.5,1.9,2.1,1.8,2.2,2.1,1.7,1.8,1.8,2.5,2,1.9,2.1,2,2.4,2.3,1.8,2.2,2.3,1.5,2.3,2,2,1.8,2.1,1.8,1.8,1.8,2.1,1.6,1.9,2,2.2,1.5,1.4,2.3,2.4,1.8,1.8,2.1,2.4,2.3,1.9,2.3,2.5,2.3,1.9,2,2.3,1.8]},"group":["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica"],"alldata":{"Sepal.Length":[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5,7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"Sepal.Width":[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3,3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8,3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],"Petal.Length":[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5,1.7,1.5,1,1.7,1.9,1.6,1.6,1.5,1.4,1.6,1.6,1.5,1.5,1.4,1.5,1.2,1.3,1.4,1.3,1.5,1.3,1.3,1.3,1.6,1.9,1.4,1.6,1.4,1.5,1.4,4.7,4.5,4.9,4,4.6,4.5,4.7,3.3,4.6,3.9,3.5,4.2,4,4.7,3.6,4.4,4.5,4.1,4.5,3.9,4.8,4,4.9,4.7,4.3,4.4,4.8,5,4.5,3.5,3.8,3.7,3.9,5.1,4.5,4.5,4.7,4.4,4.1,4,4.4,4.6,4,3.3,4.2,4.2,4.2,4.3,3,4.1,6,5.1,5.9,5.6,5.8,6.6,4.5,6.3,5.8,6.1,5.1,5.3,5.5,5,5.1,5.3,5.5,6.7,6.9,5,5.7,4.9,6.7,4.9,5.7,6,4.8,4.9,5.6,5.8,6.1,6.4,5.6,5.1,5.6,6.1,5.6,5.5,4.8,5.4,5.6,5.1,5.1,5.9,5.7,5.2,5,5.2,5.4,5.1],"Petal.Width":[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3,0.2,0.4,0.2,0.5,0.2,0.2,0.4,0.2,0.2,0.2,0.2,0.4,0.1,0.2,0.2,0.2,0.2,0.1,0.2,0.2,0.3,0.3,0.2,0.6,0.4,0.3,0.2,0.2,0.2,0.2,1.4,1.5,1.5,1.3,1.5,1.3,1.6,1,1.3,1.4,1,1.5,1,1.4,1.3,1.4,1.5,1,1.5,1.1,1.8,1.3,1.5,1.2,1.3,1.4,1.4,1.7,1.5,1,1.1,1,1.2,1.6,1.5,1.6,1.5,1.3,1.3,1.3,1.2,1.4,1.2,1,1.3,1.2,1.3,1.3,1.1,1.3,2.5,1.9,2.1,1.8,2.2,2.1,1.7,1.8,1.8,2.5,2,1.9,2.1,2,2.4,2.3,1.8,2.2,2.3,1.5,2.3,2,2,1.8,2.1,1.8,1.8,1.8,2.1,1.6,1.9,2,2.2,1.5,1.4,2.3,2.4,1.8,1.8,2.1,2.4,2.3,1.9,2.3,2.5,2.3,1.9,2,2.3,1.8],"groupval":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],"group":["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","versicolor","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica","virginica"],"tooltip":["1 <br/> setosa","2 <br/> setosa","3 <br/> setosa","4 <br/> setosa","5 <br/> setosa","6 <br/> setosa","7 <br/> setosa","8 <br/> setosa","9 <br/> setosa","10 <br/> setosa","11 <br/> setosa","12 <br/> setosa","13 <br/> setosa","14 <br/> setosa","15 <br/> setosa","16 <br/> setosa","17 <br/> setosa","18 <br/> setosa","19 <br/> setosa","20 <br/> setosa","21 <br/> setosa","22 <br/> setosa","23 <br/> setosa","24 <br/> setosa","25 <br/> setosa","26 <br/> setosa","27 <br/> setosa","28 <br/> setosa","29 <br/> setosa","30 <br/> setosa","31 <br/> setosa","32 <br/> setosa","33 <br/> setosa","34 <br/> setosa","35 <br/> setosa","36 <br/> setosa","37 <br/> setosa","38 <br/> setosa","39 <br/> setosa","40 <br/> setosa","41 <br/> setosa","42 <br/> setosa","43 <br/> setosa","44 <br/> setosa","45 <br/> setosa","46 <br/> setosa","47 <br/> setosa","48 <br/> setosa","49 <br/> setosa","50 <br/> setosa","51 <br/> versicolor","52 <br/> versicolor","53 <br/> versicolor","54 <br/> versicolor","55 <br/> versicolor","56 <br/> versicolor","57 <br/> versicolor","58 <br/> versicolor","59 <br/> versicolor","60 <br/> versicolor","61 <br/> versicolor","62 <br/> versicolor","63 <br/> versicolor","64 <br/> versicolor","65 <br/> versicolor","66 <br/> versicolor","67 <br/> versicolor","68 <br/> versicolor","69 <br/> versicolor","70 <br/> versicolor","71 <br/> versicolor","72 <br/> versicolor","73 <br/> versicolor","74 <br/> versicolor","75 <br/> versicolor","76 <br/> versicolor","77 <br/> versicolor","78 <br/> versicolor","79 <br/> versicolor","80 <br/> versicolor","81 <br/> versicolor","82 <br/> versicolor","83 <br/> versicolor","84 <br/> versicolor","85 <br/> versicolor","86 <br/> versicolor","87 <br/> versicolor","88 <br/> versicolor","89 <br/> versicolor","90 <br/> versicolor","91 <br/> versicolor","92 <br/> versicolor","93 <br/> versicolor","94 <br/> versicolor","95 <br/> versicolor","96 <br/> versicolor","97 <br/> versicolor","98 <br/> versicolor","99 <br/> versicolor","100 <br/> versicolor","101 <br/> virginica","102 <br/> virginica","103 <br/> virginica","104 <br/> virginica","105 <br/> virginica","106 <br/> virginica","107 <br/> virginica","108 <br/> virginica","109 <br/> virginica","110 <br/> virginica","111 <br/> virginica","112 <br/> virginica","113 <br/> virginica","114 <br/> virginica","115 <br/> virginica","116 <br/> virginica","117 <br/> virginica","118 <br/> virginica","119 <br/> virginica","120 <br/> virginica","121 <br/> virginica","122 <br/> virginica","123 <br/> virginica","124 <br/> virginica","125 <br/> virginica","126 <br/> virginica","127 <br/> virginica","128 <br/> virginica","129 <br/> virginica","130 <br/> virginica","131 <br/> virginica","132 <br/> virginica","133 <br/> virginica","134 <br/> virginica","135 <br/> virginica","136 <br/> virginica","137 <br/> virginica","138 <br/> virginica","139 <br/> virginica","140 <br/> virginica","141 <br/> virginica","142 <br/> virginica","143 <br/> virginica","144 <br/> virginica","145 <br/> virginica","146 <br/> virginica","147 <br/> virginica","148 <br/> virginica","149 <br/> virginica","150 <br/> virginica"]},"n":150,"p":4,"labels":["Sepal.Length","Sepal.Width","Petal.Length","Petal.Width"],"settings":{"width":null,"height":null,"col":["#E41A1C","#377EB8","#4DAF4A"],"cex":3,"opacity":0.9,"diag":false},"leftmar":35,"topmar":2},"evals":[],"jsHooks":[]}</script>
+<p>Matriz interativa - Iris</p>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> Species,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span>  Sepal.Length)) <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Elaborado por: Ariane Hayana"</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Espécies"</span>) <span class="sc">+</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Sepal Length"</span>) <span class="sc">+</span> </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>();plot</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="relatorio_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="480"></p>
+<p></p><figcaption class="figure-caption">Boxplot estático.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plotly<span class="sc">::</span><span class="fu">ggplotly</span>(plot)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-faacc27b8be2d00a3199" style="width:100%;height:390px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-faacc27b8be2d00a3199">{"x":{"data":[{"x":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"y":[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5],"hoverinfo":"y","type":"box","fillcolor":"rgba(248,118,109,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"},"size":5.66929133858268},"line":{"color":"rgba(51,51,51,1)","width":1.88976377952756},"name":"setosa","legendgroup":"setosa","showlegend":true,"xaxis":"x","yaxis":"y","frame":null},{"x":[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],"y":[7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7],"hoverinfo":"y","type":"box","fillcolor":"rgba(0,186,56,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"},"size":5.66929133858268},"line":{"color":"rgba(51,51,51,1)","width":1.88976377952756},"name":"versicolor","legendgroup":"versicolor","showlegend":true,"xaxis":"x","yaxis":"y","frame":null},{"x":[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],"y":[6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"hoverinfo":"y","type":"box","fillcolor":"rgba(97,156,255,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"},"size":5.66929133858268},"line":{"color":"rgba(51,51,51,1)","width":1.88976377952756},"name":"virginica","legendgroup":"virginica","showlegend":true,"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":28.1765601217656,"r":7.30593607305936,"b":42.130898021309,"l":31.4155251141553},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,3.6],"tickmode":"array","ticktext":["setosa","versicolor","virginica"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["setosa","versicolor","virginica"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Espécies","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[4.12,8.08],"tickmode":"array","ticktext":["5","6","7","8"],"tickvals":[5,6,7,8],"categoryorder":"array","categoryarray":["5","6","7","8"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Sepal Length","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Species","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"31d058a14258":{"x":{},"y":{},"fill":{},"type":"box"}},"cur_data":"31d058a14258","visdat":{"31d058a14258":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p>Boxplot dinâmico.</p>
+</div>
+</div>
+</section>
+<section id="tabela-descritiva-com-pacote-summarytools" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="tabela-descritiva-com-pacote-summarytools">Tabela descritiva com pacote <code>summarytools</code></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(summarytools) </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(iris) <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Petal.Length</th>
+<th style="text-align: right;">Petal.Width</th>
+<th style="text-align: right;">Sepal.Length</th>
+<th style="text-align: right;">Sepal.Width</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: right;">3.758</td>
+<td style="text-align: right;">1.199</td>
+<td style="text-align: right;">5.843</td>
+<td style="text-align: right;">3.057</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Std.Dev</td>
+<td style="text-align: right;">1.765</td>
+<td style="text-align: right;">0.762</td>
+<td style="text-align: right;">0.828</td>
+<td style="text-align: right;">0.436</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Min</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.100</td>
+<td style="text-align: right;">4.300</td>
+<td style="text-align: right;">2.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q1</td>
+<td style="text-align: right;">1.600</td>
+<td style="text-align: right;">0.300</td>
+<td style="text-align: right;">5.100</td>
+<td style="text-align: right;">2.800</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Median</td>
+<td style="text-align: right;">4.350</td>
+<td style="text-align: right;">1.300</td>
+<td style="text-align: right;">5.800</td>
+<td style="text-align: right;">3.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q3</td>
+<td style="text-align: right;">5.100</td>
+<td style="text-align: right;">1.800</td>
+<td style="text-align: right;">6.400</td>
+<td style="text-align: right;">3.300</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Max</td>
+<td style="text-align: right;">6.900</td>
+<td style="text-align: right;">2.500</td>
+<td style="text-align: right;">7.900</td>
+<td style="text-align: right;">4.400</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MAD</td>
+<td style="text-align: right;">1.853</td>
+<td style="text-align: right;">1.038</td>
+<td style="text-align: right;">1.038</td>
+<td style="text-align: right;">0.445</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IQR</td>
+<td style="text-align: right;">3.500</td>
+<td style="text-align: right;">1.500</td>
+<td style="text-align: right;">1.300</td>
+<td style="text-align: right;">0.500</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CV</td>
+<td style="text-align: right;">0.470</td>
+<td style="text-align: right;">0.636</td>
+<td style="text-align: right;">0.142</td>
+<td style="text-align: right;">0.143</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Skewness</td>
+<td style="text-align: right;">-0.269</td>
+<td style="text-align: right;">-0.101</td>
+<td style="text-align: right;">0.309</td>
+<td style="text-align: right;">0.313</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SE.Skewness</td>
+<td style="text-align: right;">0.198</td>
+<td style="text-align: right;">0.198</td>
+<td style="text-align: right;">0.198</td>
+<td style="text-align: right;">0.198</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kurtosis</td>
+<td style="text-align: right;">-1.417</td>
+<td style="text-align: right;">-1.358</td>
+<td style="text-align: right;">-0.606</td>
+<td style="text-align: right;">0.139</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">N.Valid</td>
+<td style="text-align: right;">150.000</td>
+<td style="text-align: right;">150.000</td>
+<td style="text-align: right;">150.000</td>
+<td style="text-align: right;">150.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pct.Valid</td>
+<td style="text-align: right;">100.000</td>
+<td style="text-align: right;">100.000</td>
+<td style="text-align: right;">100.000</td>
+<td style="text-align: right;">100.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li>Fonte: <span class="citation" data-cites="summarytools">Comtois (<a href="#ref-summarytools" role="doc-biblioref">2022</a>)</span>.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="ref-summarytools" class="csl-entry" role="doc-biblioentry">
+Comtois, Dominic. 2022. <span>"summarytools: Tools to Quickly and Neatly Summarize Data"</span>. <a href="https://CRAN.R-project.org/package=summarytools">https://CRAN.R-project.org/package=summarytools</a>.
+</div></div></section>
+<section id="vídeos-no-relatório-quarto" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="vídeos-no-relatório-quarto">Vídeos no relatório Quarto</h2>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Necessário instalar Quarto v1.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>O suporte para vídeos é um recurso do Quarto v1.2. Se você quiser usar esse recurso, faça o download e instale o Quarto v1.2 antes de continuar.</p>
+<p>Instale a versão de pré-lançamento do Quarto <a href="https://quarto.org/docs/download/prerelease.html">aqui</a>.</p>
+</div>
+</div>
+<p>Para inserir vídeos, após feita as instalações necessárias, basta inserir o link do Youtube na sintaxe a seguir:</p>
+<div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://youtu.be/1FfyDyRinpY &gt;}}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>O resultado será:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/1FfyDyRinpY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Para alterar o tamanho do vídeo, basta inserir <code>width="xx"</code> (largura) <code>height="xx"</code> (altura), como no exemplo:</p>
+<div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://youtu.be/1FfyDyRinpY width="225" height="170" &gt;}}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para mais detalhes sobre a utilização de vídeos, clique <a href="https://quarto.org/docs/authoring/videos.html">aqui</a>.</p>
+
+<!-- -->
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>O resultado com as dimensões <code>width="225" e height="170"</code> será assim:</p>
+<div class="quarto-video"><iframe src="https://www.youtube.com/embed/1FfyDyRinpY" width="225" height="170" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div></div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiada");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Código fonte</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb11" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Meu relatório em Quarto" # Título do relatório</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "**Minicurso - Primeiros passos com Quarto**"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Ariane Hayana" # Autor(a)</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> pt # Linguagem em português</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "`r format(Sys.Date())`" # Data do relatório</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> short # Formato de data curto: dd/MM/yyyy </span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true # Adiciona um índice no relatório</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">    html: </span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">      css: ["custom.css"] # Customização com css</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">      code-fold: false # code-fold: true para "ocultar" o bloco de códigos</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">      code-tools: true  #code-tools: true para ativar ferramentas de interação com os códigos</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co">  #    number-sections: true # Número de seções/subseções</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co">      theme: </span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co">        light: cosmo</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co">        dark: superhero # Sugestão: superhero/vapor Mudar o tema do relatório aqui</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="an">reference-location:</span><span class="co"> margin</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="an">citation-location:</span><span class="co"> margin</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="an">params:</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co">  dataset: "iris" # Parâmetros aplicável em todo o documento</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Script para logo na página</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>htmltools<span class="sc">::</span><span class="fu">img</span>(</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">src =</span> knitr<span class="sc">::</span><span class="fu">image_uri</span>(<span class="fu">file.path</span>(<span class="st">"img"</span>, <span class="st">"logo.png"</span>)),</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">alt =</span> <span class="st">'logo'</span>,</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">'position:absolute; top:0; left:20px; padding:30px;'</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conjunto de dados: Iris</span></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>O conjunto de dados consiste em 50 amostras de cada uma das três espécies de *Iris* ( *Iris setosa*, *Iris virginica* e *Iris versicolor*). Quatro variáveis foram medidas em cada amostra: o comprimento e a largura das sépalas e pétalas, em centímetros.</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>Fonte: <span class="co">[</span><span class="ot">Wikipédia</span><span class="co">](https://pt.wikipedia.org/wiki/Conjunto_de_dados_flor_Iris)</span></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>Os dados podem ser consultados na guia *Tabela*, bem como as imagens das flores:</span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tabela</span></span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">|&gt;</span> </span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>()</span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setosa</span></span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a><span class="in">``` md</span></span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a><span class="al">![Iris setosa](img/setosa.png)</span>{fig-align="center" width="300"}</span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a><span class="al">![Iris setosa](img/setosa.png)</span>{fig-align="center" width="300"}</span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## Versicolor</span></span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a><span class="in">``` md</span></span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a><span class="al">![Iris versicolor](img/versicolor.png)</span>{fig-align="center" width="304"}</span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a><span class="al">![Iris versicolor](img/versicolor.png)</span>{fig-align="center" width="304"}</span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## Virginica</span></span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a><span class="in">``` md</span></span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a><span class="al">![Iris virginica](img/virginica.png)</span>{fig-align="center" width="300"}</span>
+<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a><span class="al">![Iris virginica](img/virginica.png)</span>{fig-align="center" width="300"}</span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a><span class="fu">### Inserindo código do R em linha de texto</span></span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a>Você pode automatizar a apresentação de seus resultados no texto:</span>
+<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; O *dataset* `r params$dataset` tem `r ncol(iris)` colunas e `r nrow(iris)` linhas. As variáveis do *dataset* são *`r names(iris)`*.</span></span>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a><span class="fu">### Visualizações</span></span>
+<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a>Podemos gerar uma matriz de gráficos de dispersão interativa usando a biblioteca <span class="in">`JavaScript D3`</span> do pacote <span class="in">`pairsD3`</span> <span class="co">[</span><span class="ot">@pairsD3</span><span class="co">]</span>.</span>
+<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Matriz interativa - Iris"</span></span>
+<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pairsD3)</span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a><span class="fu">pairsD3</span>(iris[,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">group=</span>iris[,<span class="dv">5</span>])</span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span>
+<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-align: "center"</span></span>
+<span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Boxplot estático."</span></span>
+<span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, </span>
+<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> Species,</span>
+<span id="cb11-117"><a href="#cb11-117" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span>  Sepal.Length)) <span class="sc">+</span> </span>
+<span id="cb11-118"><a href="#cb11-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb11-119"><a href="#cb11-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Elaborado por: Ariane Hayana"</span>) <span class="sc">+</span></span>
+<span id="cb11-120"><a href="#cb11-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Espécies"</span>) <span class="sc">+</span> </span>
+<span id="cb11-121"><a href="#cb11-121" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Sepal Length"</span>) <span class="sc">+</span> </span>
+<span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_grey</span>();plot</span>
+<span id="cb11-123"><a href="#cb11-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-124"><a href="#cb11-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-127"><a href="#cb11-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-128"><a href="#cb11-128" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span>
+<span id="cb11-129"><a href="#cb11-129" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb11-130"><a href="#cb11-130" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-131"><a href="#cb11-131" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Boxplot dinâmico."</span></span>
+<span id="cb11-132"><a href="#cb11-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-133"><a href="#cb11-133" aria-hidden="true" tabindex="-1"></a>plotly<span class="sc">::</span><span class="fu">ggplotly</span>(plot)</span>
+<span id="cb11-134"><a href="#cb11-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-135"><a href="#cb11-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-136"><a href="#cb11-136" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tabela descritiva com pacote `summarytools`</span></span>
+<span id="cb11-137"><a href="#cb11-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-140"><a href="#cb11-140" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-141"><a href="#cb11-141" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(summarytools) </span>
+<span id="cb11-142"><a href="#cb11-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-143"><a href="#cb11-143" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(iris) <span class="sc">|&gt;</span> </span>
+<span id="cb11-144"><a href="#cb11-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb11-145"><a href="#cb11-145" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb11-146"><a href="#cb11-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-147"><a href="#cb11-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-148"><a href="#cb11-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-149"><a href="#cb11-149" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Fonte: @summarytools.</span>
+<span id="cb11-150"><a href="#cb11-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-151"><a href="#cb11-151" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vídeos no relatório Quarto</span></span>
+<span id="cb11-152"><a href="#cb11-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-153"><a href="#cb11-153" aria-hidden="true" tabindex="-1"></a>::: callout-warning</span>
+<span id="cb11-154"><a href="#cb11-154" aria-hidden="true" tabindex="-1"></a><span class="fu"># Necessário instalar Quarto v1.2</span></span>
+<span id="cb11-155"><a href="#cb11-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-156"><a href="#cb11-156" aria-hidden="true" tabindex="-1"></a>O suporte para vídeos é um recurso do Quarto v1.2. Se você quiser usar esse recurso, faça o download e instale o Quarto v1.2 antes de continuar.</span>
+<span id="cb11-157"><a href="#cb11-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-158"><a href="#cb11-158" aria-hidden="true" tabindex="-1"></a>Instale a versão de pré-lançamento do Quarto <span class="co">[</span><span class="ot">aqui</span><span class="co">](https://quarto.org/docs/download/prerelease.html)</span>.</span>
+<span id="cb11-159"><a href="#cb11-159" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-160"><a href="#cb11-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-161"><a href="#cb11-161" aria-hidden="true" tabindex="-1"></a>Para inserir vídeos, após feita as instalações necessárias, basta inserir o link do Youtube na sintaxe a seguir:</span>
+<span id="cb11-162"><a href="#cb11-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-163"><a href="#cb11-163" aria-hidden="true" tabindex="-1"></a><span class="in">``` {.default shortcodes="false"}</span></span>
+<span id="cb11-164"><a href="#cb11-164" aria-hidden="true" tabindex="-1"></a><span class="in">{{&lt; video https://youtu.be/1FfyDyRinpY &gt;}}</span></span>
+<span id="cb11-165"><a href="#cb11-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-166"><a href="#cb11-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-167"><a href="#cb11-167" aria-hidden="true" tabindex="-1"></a>O resultado será:</span>
+<span id="cb11-168"><a href="#cb11-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-169"><a href="#cb11-169" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://youtu.be/1FfyDyRinpY &gt;}}</span>
+<span id="cb11-170"><a href="#cb11-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-171"><a href="#cb11-171" aria-hidden="true" tabindex="-1"></a>Para alterar o tamanho do vídeo, basta inserir <span class="in">`width="xx"`</span> (largura) <span class="in">`height="xx"`</span> (altura), como no exemplo:</span>
+<span id="cb11-172"><a href="#cb11-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-173"><a href="#cb11-173" aria-hidden="true" tabindex="-1"></a><span class="in">``` {.default shortcodes="false"}</span></span>
+<span id="cb11-174"><a href="#cb11-174" aria-hidden="true" tabindex="-1"></a><span class="in">{{&lt; video https://youtu.be/1FfyDyRinpY width="225" height="170" &gt;}}</span></span>
+<span id="cb11-175"><a href="#cb11-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-176"><a href="#cb11-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-177"><a href="#cb11-177" aria-hidden="true" tabindex="-1"></a>Para mais detalhes sobre a utilização de vídeos, clique <span class="co">[</span><span class="ot">aqui</span><span class="co">](https://quarto.org/docs/authoring/videos.html)</span>.</span>
+<span id="cb11-178"><a href="#cb11-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-179"><a href="#cb11-179" aria-hidden="true" tabindex="-1"></a>::: column-margin</span>
+<span id="cb11-180"><a href="#cb11-180" aria-hidden="true" tabindex="-1"></a>O resultado com as dimensões <span class="in">`width="225" e height="170"`</span> será assim:</span>
+<span id="cb11-181"><a href="#cb11-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-182"><a href="#cb11-182" aria-hidden="true" tabindex="-1"></a>{{&lt; video https://youtu.be/1FfyDyRinpY width="225" height="170" &gt;}}</span>
+<span id="cb11-183"><a href="#cb11-183" aria-hidden="true" tabindex="-1"></a>:::</span>
+</code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+</body></html>

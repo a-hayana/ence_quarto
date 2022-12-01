@@ -1,0 +1,134 @@
+---
+title: "Meu primeiro documento" # Título
+author: "Ariane Hayana" # Autor(a)
+format: 
+    html: 
+      theme: 
+        light: cosmo
+        dark: superhero # Sugestão: superhero/vapor
+editor: visual
+---
+
+# Formatações
+
+# Títulos/Subtítulos ou Seções/Subseções
+
+# Título 1
+
+## Título 2
+
+### Título 3
+
+#### Título 4
+
+##### Título 5
+
+###### Título 6
+
+------------------------------------------------------------------------
+
+# Estilos das fontes
+
+**Meu texto em negrito**
+
+*Meu texto em itálico*
+
+~~Meu texto em tachado~~
+
+Meu trecho de `código`
+
+Meu texto^sobrescrito^
+
+Meu texto texto~subscrito~
+
+------------------------------------------------------------------------
+
+# Listas
+
+#### Listas sem numeração
+
+-   Item 1
+-   Item 2
+    -   Subtópico 1
+    -   Subtópico 2
+
+#### Listas numeradas
+
+1.  Item A
+2.  Item B
+3.  Item C
+
+ou...
+
+1)  Item A
+2)  Item B
+3)  Item C
+
+ou...
+
+i)  Item A1
+ii) Item B1
+
+------------------------------------------------------------------------
+
+# Hiperlink
+
+[6ª Semana de Iniciação Científica](https://ence.ibge.gov.br/index.php/semic-edicao/2022) ou apenas coloque entre <https://ence.ibge.gov.br/index.php/semic-edicao/2022>
+
+------------------------------------------------------------------------
+
+# Citações
+
+> "De acordo com o autor (XXXX), ....."
+
+------------------------------------------------------------------------
+
+# Blocos
+
+::: callout-important
+Seu texto aqui!
+:::
+
+::: callout-warning
+Seu texto aqui!
+:::
+
+::: callout-note
+Seu texto aqui!
+:::
+
+------------------------------------------------------------------------
+
+# Fórmulas
+
+-   Centralizado:
+
+$$
+Y=\beta _{0} +\beta _{1}x_1+\epsilon
+$$
+
+-   Em linha:
+
+O resultado será dado por: $x = a^2 + b^2$
+
+Guia rápido de Latex [aqui](https://pt.wikipedia.org/wiki/Ajuda:Guia_de_edi%C3%A7%C3%A3o/F%C3%B3rmulas_TeX).
+
+------------------------------------------------------------------------
+
+# Imagem
+
+![](img/logo.png)
+
+------------------------------------------------------------------------
+
+# Fluxograma
+
+```{mermaid}
+graph LR;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+------------------------------------------------------------------------
